@@ -28,8 +28,6 @@ bash install-prometheus-alert_manager-loki_stack-grafana.sh
 
 ## Usage
 
-After the installation is complete, you can access the Grafana dashboard by editing the service from ClusterIP to NodePort
-
 Note that the Loki Stack dashboard can be accessed using `15141`.
 
 ## Troubleshooting

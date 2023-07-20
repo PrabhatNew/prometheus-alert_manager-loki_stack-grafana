@@ -1,0 +1,62 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: grafana-ingress
+  namespace: monitoring
+  uid: 20ad2668-af9a-4ae0-9bcd-3221807cce46
+  resourceVersion: '1984984'
+  generation: 3
+  creationTimestamp: '2023-06-13T06:43:37Z'
+  labels:
+    k8slens-edit-resource-version: v1
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  managedFields:
+    - manager: kubectl-client-side-apply
+      operation: Update
+      apiVersion: networking.k8s.io/v1
+      time: '2023-06-13T06:43:37Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubernetes.io/ingress.class: {}
+    - manager: node-fetch
+      operation: Update
+      apiVersion: networking.k8s.io/v1
+      time: '2023-06-13T07:27:53Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:k8slens-edit-resource-version: {}
+        f:spec:
+          f:tls: {}
+    - manager: kubectl-edit
+      operation: Update
+      apiVersion: networking.k8s.io/v1
+      time: '2023-06-13T09:23:51Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:rules: {}
+  selfLink: /apis/networking.k8s.io/v1/namespaces/monitoring/ingresses/grafana-ingress
+status:
+  loadBalancer: {}
+spec:
+  tls:
+    - hosts:
+        - vianet.com.np
+  rules:
+    - host: k8smonitor.vianet.com.np
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: loki-stack-grafana
+                port:
+                  number: 80
