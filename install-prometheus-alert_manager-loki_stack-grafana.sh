@@ -4,7 +4,7 @@
 kubectl create ns monitoring
 
 # Apply Prometheus and Alert Manager manifests
-kubectl apply -f Prometheus-Alert-Manager/
+kubectl apply -f 'Prometheus-Alert-Manager ' 
 
 # Add Grafana Helm repository
 helm repo add grafana https://grafana.github.io/helm-charts
